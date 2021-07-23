@@ -11,7 +11,18 @@ namespace Noaa
 {
     public class S3WeatherDataRemoteManager : IWeatherDataRemoteManager
     {
+        #region member
         private const string BUCKET_NAME = "noaa-gfs-bdp-pds";
+        #endregion
+
+        #region ctr
+        public S3WeatherDataRemoteManager()
+        {
+
+        }
+        #endregion
+
+        #region public methods
         public Task GetWeatherDataAsFileAsync(string date, int offset, string dataPath)
         {
             Amazon.Runtime.AWSCredentials aWSCredentials = new AnonymousAWSCredentials();
@@ -24,5 +35,6 @@ namespace Noaa
                 return transferUtility.DownloadAsync(dataPath, BUCKET_NAME, $"gfs.{date}/00/atmos/gfs.t00z.pgrb2.0p25.f{offset.ToString("000")}");
             });
         }
+        #endregion
     }
 }

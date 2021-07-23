@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Noaa
 {
@@ -9,6 +10,6 @@ namespace Noaa
         public string ForecastDate { get; }
         public int ForecastOffSet { get; }       
         void SetWeatherForecastDateTime(string dateTime, DateTime refernceDateTime);
-        decimal GetTemprature(string dataPath, int height, decimal lon, decimal lat);
+        Task<decimal?> GetTemprature(int height, decimal lon, decimal lat);
     }
 }

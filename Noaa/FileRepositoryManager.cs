@@ -7,6 +7,15 @@ namespace Noaa
 {
     public class FileRepositoryManager : IRepositoryManager
     {
+        #region ctr
+        public FileRepositoryManager()
+        {
+
+        }
+        #endregion
+
+        #region public methods
+
         public void CreateDataPath(string dataPath)
         {
             System.IO.Directory.CreateDirectory(dataPath.Substring(0, dataPath.LastIndexOf('\\')));
@@ -27,5 +36,7 @@ namespace Noaa
         {
             return File.Exists(dataPath);
         }
+
+        #endregion
     }
 }

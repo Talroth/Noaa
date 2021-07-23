@@ -16,31 +16,22 @@ namespace Noaa
             Console.WriteLine("Enter LAT value:");
             var lat = Console.ReadLine();
 
-            IWeatherDataProcessorManager weatherDataProcessorManager = new WeatherDataProcessorManager();
-            IWeatherDataRemoteManager weatherDataRemoteManager = new S3WeatherDataRemoteManager();
-            IRepositoryManager fileRepositoryManager = new FileRepositoryManager();
+            IWeatherDataProcessorManager weatherDataProcessorManager = new WeatherDataProcessorManager(new S3WeatherDataRemoteManager(), new FileRepositoryManager());
 
             try
             {
                 weatherDataProcessorManager.SetWeatherForecastDateTime(dateTime, DateTime.UtcNow);
 
-                var filePath = fileRepositoryManager.GetWatherDataPath(weatherDataProcessorManager.ForecastDate, weatherDataProcessorManager.ForecastOffSet);
+                var temp = await weatherDataProcessorManager.GetTemprature(2, Convert.ToDecimal(lon), Convert.ToDecimal(lat));
 
-                if (!fileRepositoryManager.IsWeatherDataExists(filePath))
+                if (temp.HasValue)
                 {
-                    fileRepositoryManager.CreateDataPath(filePath);
-
-                    await weatherDataRemoteManager.GetWeatherDataAsFileAsync(weatherDataProcessorManager.ForecastDate, weatherDataProcessorManager.ForecastOffSet, filePath);
-
-                    if (!fileRepositoryManager.IsWeatherDataExists(filePath))
-                    {
-                        Console.WriteLine("Forecast can't be found");
-                        return;
-                    }
+                    Console.WriteLine($"The temperature is: {temp.Value} C");
                 }
-
-                decimal temp = weatherDataProcessorManager.GetTemprature(filePath, 2, Convert.ToDecimal(lon), Convert.ToDecimal(lat));
-                Console.WriteLine($"The temperature is: {temp} C");
+                else
+                {
+                    Console.WriteLine($"The temperature is not available");
+                }
             }
             catch
             {

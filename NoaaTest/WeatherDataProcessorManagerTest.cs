@@ -12,7 +12,7 @@ namespace NoaaTest
         [Fact]
         public void SetWeatherForecastDateTime_today_future_time()
         {
-            var weatherDataProcessorManager = new WeatherDataProcessorManager();            
+            var weatherDataProcessorManager = new WeatherDataProcessorManager(new S3WeatherDataRemoteManager(), new FileRepositoryManager());            
             weatherDataProcessorManager.SetWeatherForecastDateTime($"24/07/2021 17:23", new DateTime(2021, 7, 24, 16, 0, 0));            
 
             Assert.Equal($"20210724", weatherDataProcessorManager.ForecastDate);
@@ -22,7 +22,7 @@ namespace NoaaTest
         [Fact]
         public void SetWeatherForecastDateTime_today_past_time()
         {
-            var weatherDataProcessorManager = new WeatherDataProcessorManager();            
+            var weatherDataProcessorManager = new WeatherDataProcessorManager(new S3WeatherDataRemoteManager(), new FileRepositoryManager());            
             weatherDataProcessorManager.SetWeatherForecastDateTime($"24/07/2021 15:23", new DateTime(2021, 7, 24, 16, 0, 0));
 
             Assert.Equal($"20210724", weatherDataProcessorManager.ForecastDate);
@@ -32,7 +32,7 @@ namespace NoaaTest
         [Fact]
         public void SetWeatherForecastDateTime_yesterday()
         {
-            var weatherDataProcessorManager = new WeatherDataProcessorManager();            
+            var weatherDataProcessorManager = new WeatherDataProcessorManager(new S3WeatherDataRemoteManager(), new FileRepositoryManager());            
             weatherDataProcessorManager.SetWeatherForecastDateTime($"23/07/2021 15:23", new DateTime(2021, 7, 24, 16, 0, 0));
 
             Assert.Equal($"20210723", weatherDataProcessorManager.ForecastDate);
@@ -42,7 +42,7 @@ namespace NoaaTest
         [Fact]
         public void SetWeatherForecastDateTime_future()
         {
-            var weatherDataProcessorManager = new WeatherDataProcessorManager();            
+            var weatherDataProcessorManager = new WeatherDataProcessorManager(new S3WeatherDataRemoteManager(), new FileRepositoryManager());            
             weatherDataProcessorManager.SetWeatherForecastDateTime($"26/07/2021 16:23", new DateTime(2021, 7, 24, 16, 0, 0));
 
             Assert.Equal($"20210724", weatherDataProcessorManager.ForecastDate);
