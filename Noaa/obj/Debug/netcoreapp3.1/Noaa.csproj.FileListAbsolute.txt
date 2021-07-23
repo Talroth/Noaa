@@ -1,0 +1,16 @@
+C:\Users\Tal\source\repos\Noaa\Noaa\bin\Debug\netcoreapp3.1\Noaa.exe
+C:\Users\Tal\source\repos\Noaa\Noaa\bin\Debug\netcoreapp3.1\Noaa.deps.json
+C:\Users\Tal\source\repos\Noaa\Noaa\bin\Debug\netcoreapp3.1\Noaa.runtimeconfig.json
+C:\Users\Tal\source\repos\Noaa\Noaa\bin\Debug\netcoreapp3.1\Noaa.runtimeconfig.dev.json
+C:\Users\Tal\source\repos\Noaa\Noaa\bin\Debug\netcoreapp3.1\Noaa.dll
+C:\Users\Tal\source\repos\Noaa\Noaa\bin\Debug\netcoreapp3.1\Noaa.pdb
+C:\Users\Tal\source\repos\Noaa\Noaa\bin\Debug\netcoreapp3.1\AWSSDK.Core.dll
+C:\Users\Tal\source\repos\Noaa\Noaa\bin\Debug\netcoreapp3.1\AWSSDK.S3.dll
+C:\Users\Tal\source\repos\Noaa\Noaa\obj\Debug\netcoreapp3.1\Noaa.csproj.AssemblyReference.cache
+C:\Users\Tal\source\repos\Noaa\Noaa\obj\Debug\netcoreapp3.1\Noaa.AssemblyInfoInputs.cache
+C:\Users\Tal\source\repos\Noaa\Noaa\obj\Debug\netcoreapp3.1\Noaa.AssemblyInfo.cs
+C:\Users\Tal\source\repos\Noaa\Noaa\obj\Debug\netcoreapp3.1\Noaa.csproj.CoreCompileInputs.cache
+C:\Users\Tal\source\repos\Noaa\Noaa\obj\Debug\netcoreapp3.1\Noaa.csproj.CopyComplete
+C:\Users\Tal\source\repos\Noaa\Noaa\obj\Debug\netcoreapp3.1\Noaa.dll
+C:\Users\Tal\source\repos\Noaa\Noaa\obj\Debug\netcoreapp3.1\Noaa.pdb
+C:\Users\Tal\source\repos\Noaa\Noaa\obj\Debug\netcoreapp3.1\Noaa.genruntimeconfig.cache
