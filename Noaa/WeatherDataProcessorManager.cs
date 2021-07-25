@@ -39,9 +39,9 @@ namespace Noaa
             else
             {
                 var parsedDateWithoutMinutesAndSec = new DateTime(parsedDate.Year, parsedDate.Month, parsedDate.Day, parsedDate.Hour, 0, 0);                
-                var nowateWithoutMinutesAndSec = new DateTime(refernceDateTime.Year, refernceDateTime.Month, refernceDateTime.Day, refernceDateTime.Hour, 0, 0);
-                var offsetBetweenForecastAndReferenceDateTime = (int)(parsedDateWithoutMinutesAndSec - nowateWithoutMinutesAndSec).TotalHours;                                
-                ForecastDate = nowateWithoutMinutesAndSec.Year.ToString("0000") + nowateWithoutMinutesAndSec.Month.ToString("00") + nowateWithoutMinutesAndSec.Day.ToString("00");
+                var referenceDateWithoutMinutesAndSec = new DateTime(refernceDateTime.Year, refernceDateTime.Month, refernceDateTime.Day, refernceDateTime.Hour, 0, 0);
+                var offsetBetweenForecastAndReferenceDateTime = (int)(parsedDateWithoutMinutesAndSec - referenceDateWithoutMinutesAndSec).TotalHours;                                
+                ForecastDate = referenceDateWithoutMinutesAndSec.Year.ToString("0000") + referenceDateWithoutMinutesAndSec.Month.ToString("00") + referenceDateWithoutMinutesAndSec.Day.ToString("00");
                 ForecastOffSet = offsetBetweenForecastAndReferenceDateTime + refernceDateTime.Hour;
             }
         }
